@@ -1,0 +1,6 @@
+frase = str(input('digite seu nome completo:')).strip()
+print('Seu nome em maiusculo e´{}'.format(frase.upper()))
+print('Seu nome em minusculo e´{} '.format(frase.lower()))
+print('seu nome tem {} letras'.format(len(frase) - frase.count(' ')))
+dividido = frase.split()
+print('Seu primeiro nome tem {} letras'.format(len(dividido[0])))
