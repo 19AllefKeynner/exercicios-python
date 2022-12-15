@@ -4,6 +4,8 @@ from time import sleep
 print('Sorteanddo 5 valores...')
 print('-='*30)
 sleep(2.5)
+
+
 def sorteio(lista):
     print(f'Os números sorteados foram...',end=' ')
     for c in range(0,5):

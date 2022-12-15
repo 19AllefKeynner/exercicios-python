@@ -6,7 +6,7 @@ lista = ('Borracha',1.90,
 cont = 0
 
 print('-='*20)
-print('TABELA DE PREÇOS')
+print('FICHA DE PREÇOS')
 print('-='*20)
 for pos in range(0,len(lista)):
     if pos % 2 == 0:
