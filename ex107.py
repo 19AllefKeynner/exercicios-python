@@ -1,4 +1,4 @@
-from mypacote import ex107
+import ex107
 
 n = float(input('Digite um número: '))
 print(f'A metade de {n} é {ex107.metade(n)}!')

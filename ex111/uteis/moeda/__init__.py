@@ -1,5 +1,4 @@
-
-from mypacote import textos
+import textos
 
 def metade(n=0,formate=False):
     m = n // 2
@@ -32,3 +31,14 @@ def dobro(n=0,formate=False):
 
 def dinheiro(a=0, moeda='R$'):
     return f'{moeda}{a:.2f}'.replace('.',',')
+
+
+def resumo(a=0, mais= 10, menos= 5 ):
+    print(f'{textos.titulo("       Resumo do Valor       ")}')
+    print(f'Preço analizado: \t\t{dinheiro(a)}')
+    print(f'Dobro do valor: \t\t{dobro(a,True)}')
+    print(f'Metade do valor: \t\t{metade(a,True)}')
+    print(f'{mais}% de aumento: \t\t{aumentar(a,mais,True)}')
+    print(f'{menos}% de desconto: \t\t{diminuir(a,menos,True)}')
+    print('~'*33)
+

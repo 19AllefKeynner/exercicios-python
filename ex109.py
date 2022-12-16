@@ -1,4 +1,4 @@
-from mypacote import ex109
+import ex109
 
 n = float(input('Digite um número: '))
 print(f'A metade de {ex109.dinheiro(n)} é {ex109.metade(n=n,formate=True)}!')

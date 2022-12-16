@@ -1,4 +1,4 @@
-from mypacote import ex110
+import ex110
 
 
 

@@ -1,4 +1,4 @@
-from mypacote import textos
+import textos
 
 def metade(n=0,formate=False):
     m = n // 2

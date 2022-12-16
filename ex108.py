@@ -1,4 +1,4 @@
-from mypacote import ex108
+import ex108
 
 a = float(input('Digite um valor: '))
 ab = (ex108.dinheiro(a,'$'))
