@@ -1,8 +1,3 @@
-def dobro(n):
-    d = n + n
-    return d
-
-
 def metade(n):
     m = n // 2
     return m
@@ -25,3 +20,7 @@ def fatorial(n):
     for c in range(1,n+1):
         f *= c
     return f
+
+def dobro(n):
+    d = n + n
+    return d
