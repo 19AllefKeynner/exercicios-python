@@ -1,5 +1,5 @@
 
-from ex111.uteis import moeda
+from Modulos.uteis import moeda
 
 p = int(input('Digite um valor: '))
 m = int(input('Quantos % de aumento você quer desse valor? '))

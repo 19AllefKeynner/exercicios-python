@@ -1,8 +1,8 @@
-import ex108
+from Modulos.uteis import moeda
 
 a = float(input('Digite um valor: '))
-ab = (ex108.dinheiro(a,'$'))
-print(f'A metade de {ab} é {ex108.dinheiro(a=ex108.metade(a),moeda="$")}!')
-print(f'O dobro de {ab} é {ex108.dinheiro(ex108.dobro(a),"$")}!')
-print(f'Com mais 10%, temos: {ex108.dinheiro(ex108.aumentar(a, 10),"$")}!')
-print(f'Tirando 5% resta: {ex108.dinheiro(ex108.diminuir(a,5),"$")}!')
+ab = (moeda.dinheiro(a, '$'))
+print(f'A metade de {ab} é {moeda.dinheiro(a=moeda.metade(a), moeda="$")}!')
+print(f'O dobro de {ab} é {moeda.dinheiro(moeda.dobro(a), "$")}!')
+print(f'Com mais 10%, temos: {moeda.dinheiro(moeda.aumentar(a, 10), "$")}!')
+print(f'Tirando 5% resta: {moeda.dinheiro(moeda.diminuir(a, 5), "$")}!')
