@@ -9,6 +9,7 @@ if c<a and c<b:
 print('O menor número foi: {}'.format(Menor))
 Maior = a
 if b>a and b>c:
+
     Maior = b
 if c>a and c>b:
     Maior = c

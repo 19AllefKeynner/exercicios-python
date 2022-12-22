@@ -1,4 +1,4 @@
-import textos
+from Modulos.uteis import textos
 
 def metade(n=0,formate=False):
     m = n // 2

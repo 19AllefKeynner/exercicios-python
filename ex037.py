@@ -1,4 +1,4 @@
-numero = int(input('Digite um número inteiro?'))
+numero = int(input('Digite um número inteiro: '))
 print('''Escolha uma das bases para conversão:
 [1] Binário
 [2] Octal

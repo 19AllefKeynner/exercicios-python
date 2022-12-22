@@ -7,3 +7,4 @@ elif a < 5.0:
     print('O aluno está \033[1;31mreprovado!\033[m')
 elif a > 5.0 or a < 6.9:
     print('O aluno está de \033[1;31mrecuperação!\033[m')
+    
