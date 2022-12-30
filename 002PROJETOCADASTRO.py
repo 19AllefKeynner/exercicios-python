@@ -4,6 +4,7 @@ from time import sleep
 #loop pra nn precisar!
 #Validar se o email existe!
 
+
 listaguardadados = []
 conte = 0
 contt = 0
@@ -40,7 +41,7 @@ if opcao1 == '1':
         print('\033[1;31m ATENÇÃO, use letras e números!')
         while True:
             senha = str(input('\033[1;33mCrie uma senha de 8 digitos: ')).strip()
-            if len(senha) >= 8:
+            if len(senha) >= 8 and senha.isalnum() == False:
                 break
             else:
                 print('\033[1;31m ATENÇÃO, use letras e números!')
