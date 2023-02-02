@@ -1,80 +1,47 @@
 #Add botão de apagar tudo e o de apagar i ultimo digito
-#
-
 from tkinter import *
-listaigual = []
 from time import sleep
 listanum = []
 valor = len(listanum) - 1
 def numero7():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     a = 7
     listanum.append(str(a))
     texto_calculo["text"] += "7"
 def numero8():
-    if '=' in listaigual:
-        texto_calculo["text"] = ''
-        listaigual.clear()
     b = 8
     listanum.append(str(b))
     texto_calculo["text"] += "8"
 def numero9():
-    if '=' in listaigual:
-        texto_calculo["text"] = ''
-        listaigual.clear()
     a = 9
     listanum.append(str(a))
     texto_calculo["text"] += "9"
 def numero1():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     a = 1
     listanum.append(str(a))
     texto_calculo["text"] += "1"
 def numero2():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     b = 2
     listanum.append(str(b))
     texto_calculo["text"] += "2"
 def numero3():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     a = 3
     listanum.append(str(a))
     texto_calculo["text"] += "3"
 
 def numero4():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     a = 4
     listanum.append(str(a))
     texto_calculo["text"] += "4"
 
 def numero5():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     b = 5
     listanum.append(str(b))
     texto_calculo["text"] += "5"
 def numero0():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     a = 0
     listanum.append(str(a))
     texto_calculo["text"] += "0"
 def numero6():
-    if '=' in listaigual:
-        listaigual.clear()
-        texto_calculo["text"] = ''
     a = 6
     listanum.append(str(a))
     texto_calculo["text"] += "6"
@@ -92,7 +59,6 @@ def sinalvezes():
     texto_calculo["text"] += "x"
 def sinaldeigual():
     a = 0
-    listaigual.clear()
     lista = []
     concat = ''
     for c in listanum:
@@ -144,9 +110,12 @@ def sinaldeigual():
                 total = total * num2
             sinal = ''
             num2 = ''
-    listaigual.append('=')
-    texto_calculo["text"] = total
+    texto_calculo["text"] = str(total)
     listanum.clear()
+    listanum.append(str(total))
+def botaoc():
+    listanum.clear()
+    texto_calculo["text"] = ''
 
 janela = Tk()
 janela.geometry("200x200")
@@ -181,7 +150,7 @@ botaodivi = Button(janela, text='÷',command=sinaldivi)
 botaodivi.grid(column=3, row=0)
 botaox = Button(janela, text='x',command=sinalvezes)
 botaox.grid(column=3, row=1)
-botaoc = Button(janela, text='   C   ')
+botaoc = Button(janela, text='   C   ', command=botaoc)
 botaoc.grid(column=0, row=4)
 botaoapagar = Button(janela, text=' [ x ] ')
 botaoapagar.grid(column=2, row=4)

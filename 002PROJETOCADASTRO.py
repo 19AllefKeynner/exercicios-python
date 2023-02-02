@@ -370,7 +370,7 @@ elif opcao1 == '2':
             if str(a.strip()) == senha3:
                 correta.append(conter + 2)
             conter += 2
-            if correta == linha[0] + 1:
+            if correta == linha[0]+1:
                 print('\033[1;32mTudo certo com seus dados!\033[m')
                 sleep(2)
                 print('')
