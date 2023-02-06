@@ -1,6 +1,7 @@
 import curses
 import random
 
+
 altura, largura = curses.initscr().getmaxyx()
 janela = curses.newwin(altura, largura, 0, 0)
 
