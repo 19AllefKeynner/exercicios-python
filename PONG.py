@@ -1,4 +1,7 @@
 import turtle
+
+#Criar parte em que um jogador vence!
+
 # Tela
 wm = turtle.Screen()
 wm.title('Pong by @Allef.K')
@@ -9,6 +12,7 @@ wm.tracer(0)
 # Placar
 placar_a = 0
 placar_b = 0
+cont = 3
 
 # Jogador A
 jogador_a = turtle.Turtle()
@@ -35,8 +39,19 @@ bola.shape('square')
 bola.color('white')
 bola.goto(0, 0)
 bola.penup()
-bola.dx = 0.3
-bola.dy = -0.3
+bola.dx = 0.4
+bola.dy = -0.4
+
+# Bola2
+bola2 = turtle.Turtle()
+bola2.speed(0)
+bola2.shape('blank')
+bola2.color('')
+bola2.goto(200, 0)
+bola2.penup()
+bola2.dx = 0.4
+bola2.dy = -0.4
+
 
 caneta = turtle.Turtle()
 caneta.speed(0)
@@ -79,9 +94,17 @@ wm.onkeypress(jogador_b_down, "Down")
 while True:
     wm.update()
 
+    if placar_a >= 15 or placar_b >= 15:
+        # Movimento da bola2
+        bola2.setx(bola2.xcor() + bola2.dx)
+        bola2.sety(bola2.ycor() + bola2.dy)
+        bola2.color('white')
+        bola2.shape('square')
+
     # Movimento da bola
     bola.setx(bola.xcor() + bola.dx)
     bola.sety(bola.ycor() + bola.dy)
+
 
     # Limites da tela
     if bola.ycor() > 290:
@@ -106,14 +129,49 @@ while True:
         caneta.clear()
         caneta.write(f"Jogador A: {placar_a}\nJogador B: {placar_b}", align="center", font=("courier", 20, "normal"))
 
-#Colisão da bola com o jogador
-    if (bola.xcor() > 340 and bola.xcor() < 350) and (bola.ycor() < jogador_b.ycor() + 40 and bola.ycor() > jogador_b.ycor() -40):
+    #Bola2
+    if bola2.ycor() > 290:
+        bola2.sety(290)
+        bola2.dy *= -1
+
+    if bola2.ycor() < -290:
+        bola2.sety(-290)
+        bola2.dy *= -1
+
+    if bola2.xcor() > 390:
+        bola2.goto(0,0)
+        bola2.dx *= -1
+        placar_a += 1
+        caneta.clear()
+        caneta.write(f"Jogador A: {placar_a}\nJogador B: {placar_b}", align="center", font=("courier", 20, "normal"))
+
+    if bola2.xcor() < -390:
+        bola2.goto(0,0)
+        bola2.dx *= -1
+        placar_b += 1
+        caneta.clear()
+        caneta.write(f"Jogador A: {placar_a}\nJogador B: {placar_b}", align="center", font=("courier", 20, "normal"))
+
+
+    # Colisão da bola com o jogador
+    if (bola.xcor() > 340 and bola.xcor() < 350) and (
+            bola.ycor() < jogador_b.ycor() + 40 and bola.ycor() > jogador_b.ycor() - 40):
         bola.setx(340)
         bola.dx *= -1
 
-    if (bola.xcor() < -340 and bola.xcor() > -350) and (bola.ycor() < jogador_a.ycor() + 40 and bola.ycor() > jogador_a.ycor() -40):
+    if (bola.xcor() < -340 and bola.xcor() > -350) and (
+            bola.ycor() < jogador_a.ycor() + 40 and bola.ycor() > jogador_a.ycor() - 40):
         bola.setx(-340)
         bola.dx *= -1
 
+        #Bola2
+    if (bola2.xcor() > 340 and bola2.xcor() < 350) and (
+            bola2.ycor() < jogador_b.ycor() + 40 and bola2.ycor() > jogador_b.ycor() - 40):
+        bola2.setx(340)
+        bola2.dx *= -1
 
+    if (bola2.xcor() < -340 and bola2.xcor() > -350) and (
+            bola2.ycor() < jogador_a.ycor() + 40 and bola2.ycor() > jogador_a.ycor() - 40):
+        bola2.setx(-340)
+        bola2.dx *= -1
 
