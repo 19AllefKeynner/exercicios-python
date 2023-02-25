@@ -84,7 +84,7 @@ def jogador_b_down():
 
 # Teclas
 wm.listen()
-wm.onkeypress(jogador_a_up, "w")
+wm.onkeypress(jogador_a_up, "space")
 wm.onkeypress(jogador_a_down, "s")
 wm.onkeypress(jogador_b_up, "Up")
 wm.onkeypress(jogador_b_down, "Down")
